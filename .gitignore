@@ -1,0 +1,11 @@
+.DS_Store
+.idea
+.ignore
+
+!.gitignore
+
+projects
+TargetExpert
+
+TESuit/Toolchains/*
+!TESuit/Toolchains/README.md
