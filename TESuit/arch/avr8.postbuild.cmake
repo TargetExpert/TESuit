@@ -34,5 +34,5 @@ add_custom_command(TARGET ${PROJECT_NAME}
 add_custom_command(TARGET ${PROJECT_NAME}
 		POST_BUILD COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/TESuit/toolchains/avr/bin/avrdude
 		-C${CMAKE_CURRENT_SOURCE_DIR}/TESuit/toolchains/avr/etc/avrdude.conf
-		-v -p${MCU} -c${DEBURGER_TYPE} -P${DEBURGER_PORT} -b115200
+		-v -p${MCU} -c${DEBUGGER_TYPE} -P${DEBUGGER_PORT} -b115200
 		-D -Uflash:w:${PROJECT_NAME}.hex:i)
