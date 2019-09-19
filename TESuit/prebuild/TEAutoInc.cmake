@@ -28,7 +28,7 @@ function(TE_AutoInc which_directory extension_list)
 	if(this_directory_all_files)
 		# check the block list.
 		# remove "BlockList" File from list
-		file(READ TESuit/BlockList block_list)
+		file(READ TESuit/Blocklist block_list)
 		string(ASCII 27 Esc)
 		string(REGEX REPLACE "\n" ";" block_list "${block_list}")
 
