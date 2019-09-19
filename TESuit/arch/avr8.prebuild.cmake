@@ -35,5 +35,5 @@ string(REPLACE "-Wl,-search_paths_first" "" CMAKE_CXX_LINK_FLAGS "${CMAKE_CXX_LI
 
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -mmcu=${MCU} -DF_CPU=${F_CPU} -w -Os -g -flto -fuse-linker-plugin -Wl,--gc-sections -std=gnu99 --save-temps" PARENT_SCOPE)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mmcu=${MCU} -DF_CPU=${F_CPU} -Os -g -flto -fuse-linker-plugin -Wl,--gc-sections -std=gnu99 --save-temps" PARENT_SCOPE)
-set(CMAKE_C_LINK_FLAGS "${CMAKE_C_LINK_FLAGS}" -Os PARENT_SCOPE)
-set(CMAKE_CXX_LINK_FLAGS "${CMAKE_CXX_LINK_FLAGS}" -Os PARENT_SCOPE)
+set(CMAKE_C_LINK_FLAGS "${CMAKE_C_LINK_FLAGS}" PARENT_SCOPE)
+set(CMAKE_CXX_LINK_FLAGS "${CMAKE_CXX_LINK_FLAGS}" PARENT_SCOPE)
