@@ -17,8 +17,6 @@
 #
 #=========================================================================
 
-function(TE_Postbuild)
-
-	include(${CMAKE_CURRENT_LIST_DIR}/TESuit/arch/avr8.postbuild.cmake)
-
+function(Postbuild_TE)
+	include(${CMAKE_CURRENT_LIST_DIR}/${_TESuit_Dir_Name}/${_TESuit_arch_Dir_Name}/avr/avr.postbuild.cmake)
 endfunction()
