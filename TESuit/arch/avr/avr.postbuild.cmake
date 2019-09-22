@@ -1,6 +1,6 @@
 #=========================================================================
 #
-#          File: avr8.postbuild.cmake
+#          File: avr.postbuild.cmake
 #
 #   Description: Toolchain setting postbuild script for avr8 achitecture.
 #                (for ISP)
@@ -30,9 +30,9 @@ add_custom_command(TARGET ${PROJECT_NAME}
 add_custom_command(TARGET ${PROJECT_NAME}
 		POST_BUILD COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/TESuit/toolchains/avr/bin/avr-size
 		${CMAKE_CURRENT_SOURCE_DIR}/cmake-build-debug/${PROJECT_NAME}
-		-C --mcu=${MCU} --format=avr)
+		-C --mcu=${TARGET} --format=avr)
 add_custom_command(TARGET ${PROJECT_NAME}
 		POST_BUILD COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/TESuit/toolchains/avr/bin/avrdude
 		-C${CMAKE_CURRENT_SOURCE_DIR}/TESuit/toolchains/avr/etc/avrdude.conf
-		-v -p${MCU} -c${DEBUGGER_TYPE} -P${DEBUGGER_PORT} -b115200
+		-v -p${TARGET} -c${DEBUGGER_TYPE} -P${DEBUGGER_PORT} -b115200
 		-D -Uflash:w:${PROJECT_NAME}.hex:i)
