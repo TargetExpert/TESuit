@@ -28,15 +28,6 @@ set(CMAKE_C_COMPILER_STRIP "${_avr_toolchain_root}/${_avr_toolchain_prefix}strip
 set(CMAKE_C_COMPILER_RANLIB "${_avr_toolchain_root}/${_avr_toolchain_prefix}ranlib" CACHE STRING "AVR-GCC ranlib for AVR8" FORCE)
 set(CMAKE_C_COMPILER_NM "${_avr_toolchain_root}/${_avr_toolchain_prefix}nm" CACHE STRING "AVR-GCC nm for AVR8" FORCE)
 
-#set(CMAKE_AR "$${_avr_toolchain_root}/${_avr_toolchain_prefix}nr" CACHE STRING "CC ar" FORCE PARENT_SCOPE)
-#set(CMAKE_LINKER "${_avr_toolchain_root}/${_avr_toolchain_prefix}ld" CACHE STRING "linker" FORCE PARENT_SCOPE)
-#set(CMAKE_STRIP "${_avr_toolchain_root}/${_avr_toolchain_prefix}strip" CACHE STRING "strip" FORCE PARENT_SCOPE)
-#set(CMAKE_RANLIB "${_avr_toolchain_root}/${_avr_toolchain_prefix}ranlib" CACHE STRING "ranlib" FORCE PARENT_SCOPE)
-#set(CMAKE_NM "${_avr_toolchain_root}/${_avr_toolchain_prefix}nm" CACHE STRING "nm" FORCE PARENT_SCOPE)
-
-#set(CMAKE_OBJCOPY "${_avr_toolchain_root}/${_avr_toolchain_prefix}objcopy" CACHE STRING "objcopy" FORCE PARENT_SCOPE)
-#set(CMAKE_OBJDUMP "${_avr_toolchain_root}/${_avr_toolchain_prefix}objdump" CACHE STRING "objdump" FORCE PARENT_SCOPE)
-
 string(REPLACE "-Wl,-search_paths_first" "" CMAKE_C_FLAGS "${CMAKE_C_FLAGS}")
 string(REPLACE "-Wl,-search_paths_first" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
 
@@ -49,7 +40,6 @@ set(_avr_std "-std=${_TESuit_LangStdTypeParm}${_TESuit_LangStdYear}")
 
 set(_avr_c_flag_opt "${_avr_mcu_spec} ${_avr_mcu_freq} ${_avr_std} ${_TESuit_C_Flags_Opt} -w -Os -g -flto -fuse-linker-plugin -Wl,--gc-sections")
 set(_avr_cxx_flag_opt "${_avr_mcu_spec} ${_avr_mcu_freq} ${_avr_std} ${_TESuit_CXX_Flags_Opt} -w -Os -g -flto -fuse-linker-plugin -Wl,--gc-sections")
-message(STATUS "_avr_c_flag_opt : ${_avr_c_flag_opt}")
 
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${_avr_c_flag_opt} --save-temps" PARENT_SCOPE)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${_avr_cxx_flag_opt} --save-temps" PARENT_SCOPE)
