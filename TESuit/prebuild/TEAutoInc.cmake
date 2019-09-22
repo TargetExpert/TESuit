@@ -17,18 +17,13 @@
 #
 #=========================================================================
 
-function(TE_AutoInc which_directory extension_list)
-
+function(_Find_SrcAndDir which_directory extension_list)
 	file(GLOB this_directory_all_files "${which_directory}/*")
-
-	#if(${which_directory} MATCHES ${CMAKE_SOURCE_DIR})
-	#	string(REGEX REPLACE "${CMAKE_SOURCE_DIR}" "." which_directory "${which_directory}")
-	#endif()
 
 	if(this_directory_all_files)
 		# check the block list.
 		# remove "BlockList" File from list
-		file(READ TESuit/Blocklist block_list)
+		file(READ ${_TESuit_Dir_Name}/Blocklist block_list)
 		string(ASCII 27 Esc)
 		string(REGEX REPLACE "\n" ";" block_list "${block_list}")
 
@@ -68,7 +63,7 @@ function(TE_AutoInc which_directory extension_list)
 		foreach(one_of_exist_all_list ${this_directory_all_files})
 			if(IS_DIRECTORY ${one_of_exist_all_list})
 				# only remain directories.
-				TE_AutoInc(${one_of_exist_all_list} ".c;.cpp;.h;.hpp;.cc")
+				_Find_SrcAndDir(${one_of_exist_all_list} ".c;.cpp;.h;.hpp;.cc")
 			endif()
 		endforeach()
 
