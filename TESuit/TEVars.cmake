@@ -54,37 +54,34 @@ function(_Set_Int_CompOptVars)
 	set(_TESuit_CXX_Link_Flags_Opt "" PARENT_SCOPE)
 endfunction()
 
+function(_Set_Int_ArchVars)
+	set(_TESuit_Target_Arch_Name "" PARENT_SCOPE)
+endfunction()
+
 function(_Set_Int_ProjectVars)
 	set(_TESuit_Project_Name "" PARENT_SCOPE)
 endfunction()
 
-# External variables.
-function(_Set_Ext_CompilerVars)
-	set(LANG_TYPE "" PARENT_SCOPE)
-	set(LANG_YEAR_TYPE "" PARENT_SCOPE)
-endfunction()
-
-function(_Set_Ext_DeviceVars)
+function(_Set_Int_DeviceVars)
 	# It's 'machine name' of you will jointing a 'Target Processor or Controller'.
-	set(TARGET "" PARENT_SCOPE)
+	set(_TESuit_Target "" PARENT_SCOPE)
 	# It's 'frequency value' of you will jointing a 'Target Processor or Controller'.
-	set(TARGET_FREQ "" PARENT_SCOPE)
+	set(_TESuit_Target_Freq "" PARENT_SCOPE)
 	# It's 'interface device name' of you will jointing a 'Target Processor or Controller'.
 	# Windows is not supported yet.
-	set(JOINT_INTERFACE "" PARENT_SCOPE)
+	set(_TESuit_Joint_Interface "" PARENT_SCOPE)
 	# It's port of 'interfacing device' of you will jointing a 'Target Processor or Controller'.
 	# you'll check following this command..
 	# (* on *nix)
 	#  $ ls /dev
 	# (* on Windows)
 	# It's not supported yet.
-	set(JOINT_PORT "" PARENT_SCOPE)
+	set(_TESuit_Joint_Port "" PARENT_SCOPE)
 endfunction()
 
 _Set_Int_DirVars()
 _Set_Int_LangStdTypeVars()
 _Set_Int_CompOptVars()
+_Set_Int_ArchVars()
 _Set_Int_ProjectVars()
-
-_Set_Ext_CompilerVars()
-_Set_Ext_DeviceVars()
+_Set_Int_DeviceVars()
