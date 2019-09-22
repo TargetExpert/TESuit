@@ -17,7 +17,7 @@
 #=========================================================================
 
 set(_avr_toolchain_prefix "avr-")
-set(_avr_toolchain_root "${CMAKE_SOURCE_DIR}/${_TESuit_Dir_Name}/${_TESuit_toolchains_Dir_Name}/avr/bin")
+set(_avr_toolchain_root "${CMAKE_SOURCE_DIR}/${_TESuit_Dir_Name}/${_TESuit_toolchains_Dir_Name}/${_TESuit_Target_Arch_Name}/bin")
 
 # C Compiler Path for AVR.
 set(CMAKE_C_COMPILER "${_avr_toolchain_root}/${_avr_toolchain_prefix}gcc" CACHE STRING "AVR-GCC C Compiler for AVR8" FORCE)
@@ -43,8 +43,8 @@ string(REPLACE "-Wl,-search_paths_first" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}"
 string(REPLACE "-Wl,-search_paths_first" "" CMAKE_C_LINK_FLAGS "${CMAKE_C_LINK_FLAGS}")
 string(REPLACE "-Wl,-search_paths_first" "" CMAKE_CXX_LINK_FLAGS "${CMAKE_CXX_LINK_FLAGS}")
 
-set(_avr_mcu_spec "-mmcu=${TARGET}")
-set(_avr_mcu_freq "-DF_CPU=${TARGET_FREQ}")
+set(_avr_mcu_spec "-mmcu=${_TESuit_Target}")
+set(_avr_mcu_freq "-DF_CPU=${_TESuit_Target_Freq}")
 set(_avr_std "-std=${_TESuit_LangStdTypeParm}${_TESuit_LangStdYear}")
 
 set(_avr_c_flag_opt "${_avr_mcu_spec} ${_avr_mcu_freq} ${_avr_std} ${_TESuit_C_Flags_Opt} -w -Os -g -flto -fuse-linker-plugin -Wl,--gc-sections")
