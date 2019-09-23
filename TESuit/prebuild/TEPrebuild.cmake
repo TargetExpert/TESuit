@@ -22,13 +22,13 @@ include(${_TESuit_Dir_Name}/${_TESuit_prebuild_Dir_Name}/TEAutoInc.cmake)
 
 function(Prebuild_TE)
 	# Find the source for Target LLL.
-	_Find_SrcAndDir(${_TargetExpert_Dir_Name} ".c;.cc;.cpp;.h;.hpp")
+	_Find_SrcAndDir(${_TargetExpert_Dir_Name}/${_TargetExpert_Src_Dir_name}/${_TargetExpert_LLL_Dir_name} ".c;.cc;.cpp;.h;.hpp")
 
 	include(${_TESuit_Dir_Name}/${_TESuit_arch_Dir_Name}/${_TESuit_Target_Arch_Name}/${_TESuit_Target_Arch_Name}.prebuild.cmake)
 
-	set(TE_src_files ${TE_src_files} PARENT_SCOPE)
-	set(TE_src_directories ${TE_src_directories} PARENT_SCOPE)
+	set(Src_Files ${Src_Files} PARENT_SCOPE)
+	set(Src_Directories ${Src_Directories} PARENT_SCOPE)
 
 	include_directories(./)
-	include_directories(${TE_src_directories})
+	include_directories(${Src_Directories})
 endfunction()
