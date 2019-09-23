@@ -67,13 +67,13 @@ function(_Find_SrcAndDir which_directory extension_list)
 			endif()
 		endforeach()
 
-		set(TE_src_files ${TE_src_files} ${file_list} PARENT_SCOPE)
+		set(Src_Files ${Src_Files} ${file_list} PARENT_SCOPE)
 
 		if(${which_directory} MATCHES ${CMAKE_SOURCE_DIR})
 			string(REGEX REPLACE "${CMAKE_SOURCE_DIR}/" "" which_directory "${which_directory}")
 		endif()
 
-		set(TE_src_directories ${TE_src_directories} ${which_directory} PARENT_SCOPE)
+		set(Src_Directories ${Src_Directories} ${which_directory} PARENT_SCOPE)
 
 	endif()
 
