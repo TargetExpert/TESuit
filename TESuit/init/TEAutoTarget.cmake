@@ -31,8 +31,6 @@ function(_Find_Target which_directory extension_list)
 			endif()
 		endforeach()
 
-		message(STATUS "Src Files : ${_TDicFile}")
-
 		file(READ ${_TDicFile} _TDiclist)
 		string(ASCII 27 Esc)
 		string(REGEX REPLACE "\n" ";" _TDiclist "${_TDiclist}")
