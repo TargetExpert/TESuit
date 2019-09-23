@@ -58,10 +58,6 @@ function(_Set_Int_ArchVars)
 	set(_TESuit_Target_Arch_Name "" PARENT_SCOPE)
 endfunction()
 
-function(_Set_Int_ProjectVars)
-	set(_TESuit_Project_Name "" PARENT_SCOPE)
-endfunction()
-
 function(_Set_Int_DeviceVars)
 	# It's 'machine name' of you will jointing a 'Target Processor or Controller'.
 	set(_TESuit_Target "" PARENT_SCOPE)
@@ -79,9 +75,16 @@ function(_Set_Int_DeviceVars)
 	set(_TESuit_Joint_Port "" PARENT_SCOPE)
 endfunction()
 
+# External variables.
+function(_Set_Ext_ProjectVars)
+	set(Project_Name "" PARENT_SCOPE)
+	set(Language "" PARENT_SCOPE)
+endfunction()
+
 _Set_Int_DirVars()
 _Set_Int_LangStdTypeVars()
 _Set_Int_CompOptVars()
 _Set_Int_ArchVars()
-_Set_Int_ProjectVars()
 _Set_Int_DeviceVars()
+
+_Set_Ext_ProjectVars()
