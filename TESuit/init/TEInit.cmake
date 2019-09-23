@@ -74,6 +74,12 @@ function(Set_JointPort port)
 	set(_TESuit_Joint_Port ${port} PARENT_SCOPE)
 endfunction()
 
+function(Set_Project project_name)
+	set(__Is_Set_Project true PARENT_SCOPE)
+
+	set(Project_Name ${project_name} PARENT_SCOPE)
+endfunction()
+
 # The "TE_Init" function is called after all other "External functions" have been called.
 function(Init_TE)
 	if (__Is_Set_LangOpt)
@@ -85,8 +91,12 @@ function(Init_TE)
 	if(__Is_Set_Target)
 		# Find the source for Target LLL.
 		_Find_Target(${_TESuit_Dir_Name}/${_TESuit_arch_Dir_Name} ".folist")
-#	else()
-#		message(FATAL_ERROR "Please, Set the your \"Target Device\" and \"Target Interface\".")
+	else()
+		message(FATAL_ERROR "Please, Set the your \"Target Device\" and \"Target Interface\".")
+	endif()
+
+	if(NOT __Is_Set_Project)
+		message(FATAL_ERROR "Please, Set the your \"Project Name\".")
 	endif()
 
 	if(_TESuit_LangType STREQUAL "c")
@@ -102,4 +112,7 @@ function(Init_TE)
 	set(_TESuit_LangStdYear ${_TESuit_LangStdYear} PARENT_SCOPE)
 
 	set(_TESuit_Target_Arch_Name ${_TESuit_Target_Arch_Name} PARENT_SCOPE)
+
+	string(TOUPPER ${_TESuit_LangType} Language)
+	set(Language ${Language} PARENT_SCOPE)
 endfunction()
