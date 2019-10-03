@@ -2,7 +2,7 @@
 #
 #          File: avr.prebuild.cmake
 #
-#   Description: Toolchain setting prebuild script for avr8 achitecture.
+#   Description: Toolchain setting prebuild script for avr achitecture.
 #
 #        Author: Doohoon Kim (Gabriel Kim, invi.dh.kim@gmail.com)
 #
@@ -20,12 +20,12 @@ set(_avr_toolchain_prefix "avr-")
 set(_avr_toolchain_root "${CMAKE_SOURCE_DIR}/${_TESuit_Dir_Name}/${_TESuit_toolchains_Dir_Name}/${_TESuit_Target_Arch_Name}/bin")
 
 # C Compiler Path for AVR.
-set(CMAKE_C_COMPILER "${_avr_toolchain_root}/${_avr_toolchain_prefix}gcc" CACHE STRING "AVR-GCC C Compiler for AVR8" FORCE)
-set(CMAKE_CXX_COMPILER "${_avr_toolchain_root}/${_avr_toolchain_prefix}g++" CACHE STRING "AVR-GCC C++ Compiler for AVR8" FORCE)
-set(CMAKE_C_COMPILER_AR "$${_avr_toolchain_root}/${_avr_toolchain_prefix}nr" CACHE STRING "AVR-GCC ar for AV8R" FORCE)
-set(CMAKE_C_COMPILER_LINKER "${_avr_toolchain_root}/${_avr_toolchain_prefix}ld" CACHE STRING "AVR-GCC linker for AVR8" FORCE)
-set(CMAKE_C_COMPILER_STRIP "${_avr_toolchain_root}/${_avr_toolchain_prefix}strip" CACHE STRING "AVR-GCC strip for AVR8" FORCE)
-set(CMAKE_C_COMPILER_RANLIB "${_avr_toolchain_root}/${_avr_toolchain_prefix}ranlib" CACHE STRING "AVR-GCC ranlib for AVR8" FORCE)
+set(CMAKE_C_COMPILER "${_avr_toolchain_root}/${_avr_toolchain_prefix}gcc" CACHE STRING "AVR-GCC C Compiler for AVR" FORCE)
+set(CMAKE_CXX_COMPILER "${_avr_toolchain_root}/${_avr_toolchain_prefix}g++" CACHE STRING "AVR-GCC C++ Compiler for AVR" FORCE)
+set(CMAKE_C_COMPILER_AR "${_avr_toolchain_root}/${_avr_toolchain_prefix}nr" CACHE STRING "AVR-GCC ar for AVR" FORCE)
+set(CMAKE_C_COMPILER_LINKER "${_avr_toolchain_root}/${_avr_toolchain_prefix}ld" CACHE STRING "AVR-GCC linker for AVR" FORCE)
+set(CMAKE_C_COMPILER_STRIP "${_avr_toolchain_root}/${_avr_toolchain_prefix}strip" CACHE STRING "AVR-GCC strip for AVR" FORCE)
+set(CMAKE_C_COMPILER_RANLIB "${_avr_toolchain_root}/${_avr_toolchain_prefix}ranlib" CACHE STRING "AVR-GCC ranlib for AVR" FORCE)
 set(CMAKE_C_COMPILER_NM "${_avr_toolchain_root}/${_avr_toolchain_prefix}nm" CACHE STRING "AVR-GCC nm for AVR8" FORCE)
 
 string(REPLACE "-Wl,-search_paths_first" "" CMAKE_C_FLAGS "${CMAKE_C_FLAGS}")
