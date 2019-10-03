@@ -2,7 +2,7 @@
 #
 #          File: avr.postbuild.cmake
 #
-#   Description: Toolchain setting postbuild script for avr8 achitecture.
+#   Description: Toolchain setting postbuild script for avr achitecture.
 #                (for ISP)
 #
 #        Author: Doohoon Kim (Gabriel Kim, invi.dh.kim@gmail.com)
