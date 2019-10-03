@@ -18,5 +18,5 @@
 #=========================================================================
 
 function(Postbuild_TE)
-	include(${CMAKE_CURRENT_LIST_DIR}/${_TESuit_Dir_Name}/${_TESuit_arch_Dir_Name}/avr/avr.postbuild.cmake)
+	include(${CMAKE_CURRENT_LIST_DIR}/${_TESuit_Dir_Name}/${_TESuit_arch_Dir_Name}/${_TESuit_Target_Arch_Name}/${_TESuit_Target_Arch_Name}.postbuild.cmake)
 endfunction()
