@@ -32,7 +32,6 @@ function(_Set_Int_DirVars)
 	set(_TESuit_arch_Dir_Name "arch" PARENT_SCOPE)
 	set(_TESuit_init_Dir_Name "init" PARENT_SCOPE)
 	set(_TESuit_prebuild_Dir_Name "prebuild" PARENT_SCOPE)
-	set(_TESuit_inbuild_Dir_Name "inbuild" PARENT_SCOPE)
 	set(_TESuit_postbuild_Dir_Name "postbuild" PARENT_SCOPE)
 	set(_TESuit_toolchains_Dir_Name "toolchains" PARENT_SCOPE)
 endfunction()
@@ -73,6 +72,10 @@ function(_Set_Int_DeviceVars)
 	# (* on Windows)
 	# It's not supported yet.
 	set(_TESuit_Joint_Port "" PARENT_SCOPE)
+endfunction()
+
+function(_Set_Int_ProjectVars)
+	set(_TESuit_ExtSourcePath "" PARENT_SCOPE)
 endfunction()
 
 # External variables.
