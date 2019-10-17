@@ -81,7 +81,7 @@ function(Set_Project project_name)
 endfunction()
 
 function(Set_ExtSourcePath source_path)
-	set(_TESuit_ExtSourcePath ${source_path} PARENT_SCOPE)
+	set(_TESuit_ExtSourcePath ${_TESuit_ExtSourcePath} ${source_path} PARENT_SCOPE)
 endfunction()
 
 # The "TE_Init" function is called after all other "External functions" have been called.
