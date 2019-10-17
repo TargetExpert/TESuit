@@ -25,9 +25,11 @@ function(Prebuild_TE)
 	_Find_SrcAndDir("${_TargetExpert_Dir_Name}/${_TargetExpert_Src_Dir_name}/${_TargetExpert_LLL_Dir_name}" ".c;.cc;.cpp;.h;.hpp")
 
 	# find the source for External path.
-	if(NOT ${_TESuit_ExtSourcePath} STREQUAL "")
-		_Find_SrcAndDir("${_TESuit_ExtSourcePath}" ".c;.cc;.cpp;.h;.hpp")
-	endif()
+	foreach(one_of_ext_path ${_TESuit_ExtSourcePath})
+		if(NOT ${one_of_ext_path} STREQUAL "")
+			_Find_SrcAndDir("${one_of_ext_path}" ".c;.cc;.cpp;.h;.hpp")
+		endif()
+	endforeach()
 
 	include(${_TESuit_Dir_Name}/${_TESuit_arch_Dir_Name}/${_TESuit_Target_Arch_Name}/${_TESuit_Target_Arch_Name}.prebuild.cmake)
 
