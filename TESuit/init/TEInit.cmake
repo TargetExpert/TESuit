@@ -81,6 +81,11 @@ function(Set_Project project_name)
 endfunction()
 
 function(Set_ExtSourcePath source_path)
+	foreach(one_of_external_path ${_TESuit_ExtSourcePath})
+		if(${source_path} STREQUAL ${one_of_external_path})
+			return()
+		endif()
+	endforeach()
 	set(_TESuit_ExtSourcePath ${_TESuit_ExtSourcePath} ${source_path} PARENT_SCOPE)
 endfunction()
 
