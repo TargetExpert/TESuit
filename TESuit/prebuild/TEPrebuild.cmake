@@ -23,6 +23,12 @@ include(${_TESuit_Dir_Name}/${_TESuit_prebuild_Dir_Name}/TEAutoInc.cmake)
 function(Prebuild_TE)
 	# Find the source for Target LLL.
 	_Find_SrcAndDir("${_TargetExpert_Dir_Name}/${_TargetExpert_Src_Dir_name}/${_TargetExpert_LLL_Dir_name}" ".c;.cc;.cpp;.h;.hpp")
+	# Find the source for Target MLL.
+	_Find_SrcAndDir("${_TargetExpert_Dir_Name}/${_TargetExpert_Src_Dir_name}/${_TargetExpert_MLL_Dir_name}" ".c;.cc;.cpp;.h;.hpp")
+	# Find the source for Target HLL.
+	_Find_SrcAndDir("${_TargetExpert_Dir_Name}/${_TargetExpert_Src_Dir_name}/${_TargetExpert_HLL_Dir_name}" ".c;.cc;.cpp;.h;.hpp")
+	# Find the source for Common Macro.
+	_Find_SrcAndDir("${_TargetExpert_Dir_Name}/${_TargetExpert_Src_Dir_name}/${_TargetExpert_Macro_Dir_name}" ".c;.cc;.cpp;.h;.hpp")
 
 	# find the source for External path.
 	foreach(one_of_ext_path ${_TESuit_ExtSourcePath})

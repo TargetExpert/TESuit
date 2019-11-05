@@ -26,6 +26,7 @@ function(_Set_Int_DirVars)
 	set(_TargetExpert_LLL_Dir_name "LLL" PARENT_SCOPE)
 	set(_TargetExpert_MLL_Dir_name "MLL" PARENT_SCOPE)
 	set(_TargetExpert_HLL_Dir_name "HLL" PARENT_SCOPE)
+	set(_TargetExpert_Macro_Dir_name "Macro" PARENT_SCOPE)
 
 	set(_TESuit_Dir_Name "TESuit" PARENT_SCOPE)
 
