@@ -12,11 +12,13 @@
 
 'TESuit' is a Build System for Compiling TargetExpert Project. This feature helps users with TargetExpert operate the Compile as Case-by-Case according to the Target Machine, and enables Compile on all systems to ensure that it does not interfere with the Target Host that runs the Compile using CMake.
 
-## Uasge
+## Usage
 
 ### Quick Start
 
 ### Building
+
+## Contributing
 
 ## License
 
